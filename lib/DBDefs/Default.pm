@@ -439,6 +439,10 @@ sub DISCOURSE_SSO_SECRET { '' }
 sub USE_SET_DATABASE_HEADER { shift->USE_SELENIUM_HEADER }
 sub USE_SELENIUM_HEADER { 0 }
 
+# The SolrCloud leader node used to get search indexes backups from.
+sub SOLR_CLOUD_LEADER { undef }
+sub SOLR_CLOUD_BACKUP_LOCATION { undef }
+
 sub WIKIMEDIA_COMMONS_IMAGES_ENABLED { 1 }
 
 # On release browse endpoints in the webservice, we limit the number of
