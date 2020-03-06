@@ -22,7 +22,7 @@ if [ -n "$RSYNC_SOLRCLOUD_BACKUPS_HOST" ]; then
         --archive \
         --delete \
         --exclude="zk_config/" \
-        --rsh "ssh -i $RSYNC_SOLRCLOUD_BACKUPS_KEY -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $RSYNC_SOLRCLOUD_BACKUPS_PORT" \
+        --rsh "ssh -i $RSYNC_SOLRCLOUD_BACKUPS_KEY -c arcfour128 -o Compression=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p $RSYNC_SOLRCLOUD_BACKUPS_PORT" \
         --verbose \
         "solr@$RSYNC_SOLRCLOUD_BACKUPS_HOST:$RSYNC_SOLRCLOUD_BACKUPS_DIR/" \
         "$DESTINATION/"
